@@ -14,8 +14,10 @@ Serial3 on pins 15 (RX) and 14 (TX)
 */
 
 //Receiver Code
+char getCharacter(byte input);
 
 byte str;
+//char str;
 
 void setup() {
   Serial.begin(9600);
@@ -23,16 +25,18 @@ void setup() {
 }
 
 void loop() {
-<<<<<<< HEAD
-  int i=1;
-=======
   int i=0;
->>>>>>> 53e49e5d69960cdc5999e047cba611ec35d0b67d
 
   if (Serial1.available()) {
     delay(100); //allows all serial sent to be received together
-      str = Serial1.read();
+    str = Serial1.read();
       //str = str >> 1;
-    Serial.println(str)-'0';
+    //int out = int(str);  
+    Serial.println(getCharacter(str));
   }
 }
+char getCharacter(byte input){
+  return char(int(input));
+  
+}
+
