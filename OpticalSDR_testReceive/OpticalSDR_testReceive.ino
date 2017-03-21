@@ -23,7 +23,11 @@ void setup() {
 }
 
 void loop() {
+<<<<<<< HEAD
   int i=1;
+=======
+  int i=0;
+>>>>>>> 53e49e5d69960cdc5999e047cba611ec35d0b67d
 
   if (Serial1.available()) {
     delay(100); //allows all serial sent to be received together
